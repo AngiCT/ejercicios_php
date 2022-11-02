@@ -12,7 +12,7 @@
         exit(); //die();
     }
    }else{
-        // borra las cookies y redigir a idioma.html
+        // borra las cookies y redigir a ejCookie1.html
         setcookie("idioma",'',time()-72000);
         setcookie("marca",'',time()-72000);
         header("Location: ejCookie1.html");

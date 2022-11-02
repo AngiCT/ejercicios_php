@@ -2,7 +2,7 @@
 
 echo "Equipo baloncesto: <br>";
 
-//declarar un array con la valores en la posición y en el elemnto.
+//declarar un array con la valores en la posición y en el elemento.
 
 $equipo = array (
     'base' => 'Angela',
