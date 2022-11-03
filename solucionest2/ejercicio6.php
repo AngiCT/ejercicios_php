@@ -12,3 +12,4 @@ foreach ($equipo as $element){
     echo '<li>' . $element . '</li>';
 } 
 echo '</ul>';
+
