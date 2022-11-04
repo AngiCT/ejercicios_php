@@ -10,3 +10,9 @@
 
     //lo mostramos por pantalla.
     print_r($paises);
+
+    //Lo mostramos sin su posición.
+    echo'<br>';
+    foreach($paises as $pais){
+        echo ' ' . $pais;
+    }

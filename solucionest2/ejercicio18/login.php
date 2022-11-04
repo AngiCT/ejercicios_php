@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio18</title>
 </head>
 <body>
-    <form name="login" action="auth.php" method="post">
-        <p>
-            <label for="nombre"> Introduce el nombre: </label>
-            <input type="text" name="nombre" id="nombre" >
-            <br>
-        </p>
-        <input type = "submit" name="envio" id="envio" value="Acceder">
-    </form> 
+  <h1>Formulario de login</h1>
+
+  <form action="auth.php" method="post">
+    <label for="">Nombre  </label>
+    <input type="text" name="nombre">
+    <br>
+    <label for="">Password  </label>
+    <input type="text" name="password">
+    <br>
+    <input type="submit" value="login">
+  </form>
 </body>
 </html>
