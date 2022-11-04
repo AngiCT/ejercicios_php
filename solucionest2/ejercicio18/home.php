@@ -1,4 +1,19 @@
-
+<?php 
+    //Declaramos una variable para guardarnos los deseos que el usuario introduzca por teclado.
+    $new = $_POST['new'];
+    //Comprobamos si existe una coockie.
+    if (isset($_COOKIE['deseos'])) {
+    //declaramos una variable para guardar el valor de la cookie de deseos.
+    $deseos= unserialize($_COOKIE['deseos']);
+    } else {
+    //Si no hay ninguna cookie, la variabke que habíamos creado estará vacía.
+    $deseos = [];
+    }
+    //En nuestro array introduciremos la variable que hemos usado antes para coger el valor que nos han escrito.
+    $deseos[] = $new;
+    //Declaramos nuestra cookie de deseos.
+    setcookie('deseos', serialize($deseos), time() + 3600);
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,26 +30,14 @@
     <h4><a href="cerrar.php">Cerrar sesión</a></h4>
     <ul>
     <pre>
-    <?php 
-    //Declaramos una variable para guardarnos los deseos que el usuario introduzca por teclado.
-    $new = $_POST['new'];
-    //Comprobamos si existe una coockie.
-    if (isset($_COOKIE['deseos'])) {
-    //declaramos una variable para guardar el valor de la cookie de deseos.
-    $deseos= unserialize($_COOKIE['deseos']);
-    } else {
-    //Si no hay ninguna cookie, la variabke que habíamos creado estará vacía.
-    $deseos = [];
-    }
-    //En nuestro array introduciremos la variable que hemos usado antes para coger el valor que nos han escrito.
-    $deseos[] = $new;
-    //Declaramos nuestra cookie de deseos.
-    setcookie('deseos', serialize($deseos), time() + 3600);
+    <?php
     //Condicón que comprueba si hay algún deseo.
     if (count($deseos)) { 
         //Bucle para sacar nuestra array por pantalla.
         foreach ($deseos as $id => $deseo) {
-        echo "<li> Deseo nº $id: " . $deseo . ' <a href="borrar.php"' . $id . '"> borrar</a> </li>';
+            //nuesttro href hará referencia a nuestro método borrar y igualaremos la id a la que hayamos sacado, asi 
+            //podremos cogerla en nuestro método y borrar una por una la que queramos.
+        echo "<li> Deseo nº $id: " . $deseo . ' <a href="?method=borrar&id= "' . $id . '"> borrar</a> </li>';
         }
     }//Si no hay deseos introducidos, saldrá este mensaje por pantalla 
     else {

@@ -1,5 +1,5 @@
 <?php
-if (isset($_COOKIE['deseos'])) {
+/*if (isset($_COOKIE['deseos'])) {
       $deseos = unserialize($_COOKIE['deseos']);
     } else {
       $deseos = [];
@@ -10,4 +10,4 @@ if (isset($_COOKIE['deseos'])) {
     unset($deseos[$id]);
     //Actualizamos nuestra cookie.
     setcookie('deseos', serialize($deseos), time() + 60*60*2);
-    header('Location: home.php');
+    header('Location: home.php');*/
